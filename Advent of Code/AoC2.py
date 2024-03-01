@@ -1,5 +1,5 @@
 def main():
-    f = open("/Users/adrian/Documents/Advent of Code/input2.txt", "r")
+    f = open("/Users/adrian/Documents/Programs/Advent of Code/input2.txt", "r")
     linelist = f.readlines()
     count = 0
     for line in linelist:

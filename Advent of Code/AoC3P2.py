@@ -6,7 +6,7 @@ import copy
 def main():
     global numbers
     numbers = ["0","1","2","3","4","5","6","7","8","9"]
-    f = open("/Users/adrian/Documents/Advent of Code/input3.txt", "r")
+    f = open("/Users/adrian/Documents/Programs/Advent of Code/input3.txt", "r")
     linelist = f.readlines()
     array = list()
     totalcount = 0

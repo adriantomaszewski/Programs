@@ -3,7 +3,7 @@ import copy
 def main():
     global symbols
     symbols = ["*","#","+","$","@","=","-","/","?", "%", "^", "&"]
-    f = open("/Users/adrian/Documents/Advent of Code/input3.txt", "r")
+    f = open("/Users/adrian/Documents/Programs/Advent of Code/input3.txt", "r")
     linelist = f.readlines()
     array = list()
     totalcount = 0

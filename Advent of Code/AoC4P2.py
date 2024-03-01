@@ -3,7 +3,7 @@
 def main():
     global totalcount
     totalcount=0
-    f = open("/Users/adrian/Documents/Advent of Code/testinput.txt", "r")
+    f = open("/Users/adrian/Documents/Programs/Advent of Code/testinput.txt", "r")
     linelist = f.readlines()
     winnumberarray = list()
     yournumberarray = list()
