@@ -1,4 +1,4 @@
-package JavaPrograms.APCSAFinal;
+package APCSAFinal;
 
 public class Zombie {
     private String type;

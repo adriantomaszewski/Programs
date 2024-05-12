@@ -1,4 +1,4 @@
-package JavaPrograms.APCSAFinal;
+package APCSAFinal;
 
 public class Supply {
     private String name;

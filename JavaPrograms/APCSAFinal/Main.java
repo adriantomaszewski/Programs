@@ -1,7 +1,7 @@
-package JavaPrograms.APCSAFinal;
+package APCSAFinal;
 
 public class Main {
-    public final Object[][] map = {{new Zombie(),new ,0,0,0,0},
+    public final Object[][] map = {{new Zombie(),0,0,0,0,0},
                                    {0,0,0,0,0,0},
                                    {0,0,0,0,0,0},
                                    {0,0,0,0,0,0},

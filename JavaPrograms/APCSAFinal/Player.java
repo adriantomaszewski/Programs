@@ -1,4 +1,4 @@
-package JavaPrograms.APCSAFinal;
+package APCSAFinal;
 
 import java.util.ArrayList;
 
