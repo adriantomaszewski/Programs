@@ -11,38 +11,38 @@ public class Zombie {
         health = 100;
         behaviortype = 0;
     }
-    public void shout() {
+    public void shout() { // Generic behavior
         System.out.println("I will kill you! I'm a good foe.");
     }
-
+// Getters and setters
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String t) {
+        type = t;
     }
 
     public int getSpeed() {
         return speed;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public void setSpeed(int s) {
+        speed = s;
     }
 
     public int getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setHealth(int h) {
+        health = h;
     }
 
     public int getBehaviorType() {
         return behaviortype;
     }
-    public int getAttackPower() {
+    public int getAttackPower() { // Setting attackpower in constructor
         if (behaviortype==0) {
             return 10;
         }
@@ -61,5 +61,4 @@ public class Zombie {
         return "Zombie";
     }
 }
-    // utilizes inheritance and polymorphism to create different zombie types with unique behaviors. Behavior could be some thing the zombie says before the fight.
     

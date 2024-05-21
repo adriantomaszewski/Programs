@@ -23,17 +23,21 @@ public class Supply {
         System.out.println("You have collected "+supply.name+".");
         player.addInventory(supply);
     }
+    // Do various supply uses
     public void use(Player player, Supply supply) {
+        //Health pack
         if (supply.type==0) {
             player.setHealth(player.getHealth()+50);
             player.setMaxHealth(player.getMaxHealth()+5);
             if (player.getHealth()>player.getMaxHealth()) {player.setHealth(player.getMaxHealth());}
             System.out.println("You have used a health pack to heal at most 50 healthpoints and increase your max health by 5.");
         }
+        //Sword
         else if (supply.type==1) {
             player.setAttackPower(player.getAttackPower()+10);
             System.out.println("You have used a sword to increase your attack power by 10.");
         }
+        // Machete
         else if (supply.type==2) {
             player.setAttackPower(player.getAttackPower()+5);
             System.out.println("You have used a machete to increase your attack power by 5.");

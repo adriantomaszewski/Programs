@@ -7,7 +7,7 @@ public class StrongZombie extends Zombie {
         setHealth(150);
         setBehaviorType(1);
     }
-    public void shout() {
+    public void shout() { // Different behavior method
         System.out.println("I will kill you! I'm a very strong foe.");
     }
     public String toString() {

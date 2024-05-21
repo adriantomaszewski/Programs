@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main { 
     public static void main(String[] args) {
+        // Initialize objects
         Supply Health = new Supply(0);
         Supply Sword = new Supply(1);
         Supply Machete = new Supply(2);
@@ -17,8 +18,10 @@ public class Main {
                           {Health,Machete,WeakZombie,"Nothing",Zombie,StrongZombie},
                           {Health,"Nothing",StrongZombie,"Nothing","Nothing",WeakZombie},
                           {"Nothing",Sword,Health,Zombie,"Nothing",Sword}};
+        // Name request
         System.out.println("Type out the name you'd like to have for your protagonist.");
         Player player1 = new Player(scanner.nextLine());
+        // Game loop
         while (gamestate == true) {
             if (map[player1.getRowLocation()][player1.getColLocation()] instanceof String) {
                 if(map[player1.getRowLocation()][player1.getColLocation()].equals("Exit")) {
@@ -34,9 +37,11 @@ public class Main {
                 System.out.println("You are at " + player1.getHealth() + "HP, have " + player1.getAttackPower() + " attack power, and have an inventory of " + player1.getInventory() + ". At your location is a " + map[player1.getRowLocation()][player1.getColLocation()] +  ". Would you like to collect supplies, attack, use supplies, or move. (Enter 0, 1, 2, or 3 corresponding to your chioce.)");
             }
             else {System.out.println("Error.");}
+            // Try catch any erorrs with it not being an integer.
             try {
                 int choice = scanner.nextInt();
                 scanner.nextLine();
+                // Collect Supplies
                 if (choice == 0) {
                     try {
                         player1.collectSupplies(player1, (Supply) map[player1.getRowLocation()][player1.getColLocation()]);
@@ -46,14 +51,18 @@ public class Main {
                         System.out.println("There are no supplies at your location.");
                     }
                 }
+                // Fight
                 else if (choice == 1) {
+                    // Check if zombie present
                     if (!(map[player1.getRowLocation()][player1.getColLocation()] instanceof Zombie)) {
                         System.out.println("There is no zombie here! Please do another action.");
                     }
+                    // Do win-loss checks
                     else if (player1.attack(player1, (Zombie) map[player1.getRowLocation()][player1.getColLocation()]) == 0) {
                         System.out.println("You have died.");
                         gamestate=false;
                     }
+                    // Reset health worldwide for zombie objects
                     else if (player1.attack(player1, (Zombie) map[player1.getRowLocation()][player1.getColLocation()]) == 1) {
                         map[player1.getRowLocation()][player1.getColLocation()] = "Nothing";
                         WeakZombie.setHealth(50);
@@ -63,7 +72,9 @@ public class Main {
                     }
                     else {System.out.println("Error.");}
                 }
+                // Use supplies
                 else if (choice == 2) {
+                    // Try catch any erorrs with it not being an integer.
                     try {
                         System.out.println("From which slot would you like to use your supply. You have an inventory of " + player1.getInventory() + ". (Starts at 0)");
                         int indexchosen = scanner.nextInt();
@@ -74,6 +85,7 @@ public class Main {
                         System.out.println("You have selected an out of bounds supply.");
                     }
                 }
+                // Move 
                 else if (choice == 3) {
                     if (map[player1.getRowLocation()][player1.getColLocation()] instanceof Zombie) {
                         System.out.println("You cannot move out of a zombie fight! Choose again.");
